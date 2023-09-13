@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import AuthService from '../services/auth.service'
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function Register() {
 
@@ -27,6 +28,11 @@ export default function Register() {
                 resetForm(initialUserState);
                 setSubmitting(false);
                 setMessage(null);
+
+                Swal.fire({
+                    icon:'success',
+                    text: response.data.message
+                })
             })
             .catch((error) => {
 
