@@ -24,7 +24,6 @@ const App = () => {
     // progressBar: true,
   };
 
-  const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
 
   useEffect(() => {
@@ -32,9 +31,6 @@ const App = () => {
 
     if (user) {
       setCurrentUser(user);
-      // setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
-    } else {
-      // setShowAdminBoard(false);
     }
   }, []);
 
